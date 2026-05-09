@@ -66,10 +66,34 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    // Simulate sending (replace with real email service)
-    await new Promise((r) => setTimeout(r, 1800));
-    setStatus('sent');
-    setForm({ name: '', email: '', subject: '', message: '' });
+
+    // Web3Forms integration - Requires an Access Key to send emails
+    const formData = new FormData();
+    // Use environment variable so the key is not hardcoded in source control
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("subject", form.subject);
+    formData.append("message", form.message);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus('sent');
+        setForm({ name: '', email: '', subject: '', message: '' });
+      } else {
+        console.error("Form error:", data);
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error("Submission failed:", error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -183,6 +207,8 @@ export default function ContactSection() {
                   </>
                 ) : status === 'sent' ? (
                   <span>✓ Message Sent!</span>
+                ) : status === 'error' ? (
+                  <span>Failed - Try Again</span>
                 ) : (
                   <>
                     <span>Send Message</span>
@@ -194,6 +220,11 @@ export default function ContactSection() {
               {status === 'sent' && (
                 <p className="text-center text-xs text-[#00D9FF] mt-1">
                   Thanks! I'll get back to you soon. 🙏
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="text-center text-xs text-[#FF3366] mt-1">
+                  Oops! Something went wrong. Please check your API key or try again.
                 </p>
               )}
             </form>
