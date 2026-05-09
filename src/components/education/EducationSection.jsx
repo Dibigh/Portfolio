@@ -63,15 +63,15 @@ export default function EducationSection() {
                   className="px-3 py-1 rounded-full text-xs font-mono font-bold"
                   style={{ background: 'rgba(0,217,255,0.1)', color: '#00D9FF', border: '1px solid rgba(0,217,255,0.2)' }}
                 >
-                  2022 – Present
+                  2022 – 2026
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-mono bg-white/5 text-[#B5B5B5] border border-white/8">
-                  Undergraduate
+                  Fresh Graduate
                 </span>
               </div>
 
               <h3 className="text-white text-xl font-bold mb-1">
-                BE Electronics, Communication &amp; Information Engineering
+                BE Electronics, Communication & Information Engineering
               </h3>
               <p className="text-[#00D9FF] font-medium mb-3">Sagarmatha Engineering College, Sanepa</p>
               <p className="text-[#B5B5B5] text-sm leading-relaxed">

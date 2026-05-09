@@ -110,7 +110,7 @@ export const EXPERIENCE = [
   },
   {
     title: 'C# & Game Development',
-    period: '2023 – 2024',
+    period: '2023 – Present',
     icon: '🎮',
     color: '#00D9FF',
     points: [
@@ -126,14 +126,14 @@ export const COUNTERS = [
   { label: 'Projects Built', value: 3, suffix: '+' },
   { label: 'Technologies', value: 20, suffix: '+' },
   { label: 'Years Learning', value: 3, suffix: '+' },
-  { label: 'Cups of Coffee', value: 500, suffix: '+' },
+  // { label: 'Cups of Coffee', value: 500, suffix: '+' },
 ];
 
 // ─── Languages ─────────────────────────────────────────────
 export const LANGUAGES = [
   { name: 'Nepali', level: 'Native', pct: 100 },
-  { name: 'English', level: 'Professional Working Proficiency', pct: 85 },
-  { name: 'Hindi', level: 'Professional Working Proficiency', pct: 80 },
+  { name: 'Hindi', level: 'Professional Working Proficiency', pct: 90 },
+  { name: 'English', level: 'Professional Working Proficiency', pct: 80 },
 ];
 
 // ─── Interests ─────────────────────────────────────────────

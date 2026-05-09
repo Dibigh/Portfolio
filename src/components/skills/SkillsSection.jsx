@@ -90,11 +90,10 @@ export default function SkillsSection() {
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 ${
-                  activeTab === cat
-                    ? 'bg-gradient-to-r from-[#00D9FF] to-[#7B61FF] text-black shadow-lg shadow-cyan-neon/20'
-                    : 'glass border border-white/8 text-[#B5B5B5] hover:text-white hover:border-white/20'
-                }`}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 ${activeTab === cat
+                  ? 'bg-gradient-to-r from-[#00D9FF] to-[#7B61FF] text-black shadow-lg shadow-cyan-neon/20'
+                  : 'glass border border-white/8 text-[#B5B5B5] hover:text-white hover:border-white/20'
+                  }`}
               >
                 {cat}
               </button>
