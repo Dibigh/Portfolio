@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base Reset ────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #00D9FF #111111;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00D9FF;
+  border-radius: 4px;
+}
+
+body {
+  background-color: #050505;
+  color: #FFFFFF;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Glassmorphism Utilities ───────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ─── Glow Effects ──────────────────────────────────────── */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.4), 0 0 40px rgba(0, 217, 255, 0.2);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.4), 0 0 40px rgba(123, 97, 255, 0.2);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 20px rgba(0, 217, 255, 0.8), 0 0 40px rgba(0, 217, 255, 0.4);
+}
+
+.glow-text-purple {
+  text-shadow: 0 0 20px rgba(123, 97, 255, 0.8), 0 0 40px rgba(123, 97, 255, 0.4);
+}
+
+/* ─── Gradient Text ─────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #00D9FF 0%, #7B61FF 50%, #5EE6FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-subtle {
+  background: linear-gradient(135deg, #ffffff 0%, #B5B5B5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Neon Border ────────────────────────────────────────── */
+.neon-border {
+  border: 1px solid transparent;
+  background: linear-gradient(#111111, #111111) padding-box,
+    linear-gradient(135deg, #00D9FF, #7B61FF) border-box;
+}
+
+.neon-border-hover {
+  transition: all 0.3s ease;
+}
+
+.neon-border-hover:hover {
+  border-color: rgba(0, 217, 255, 0.6);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2), inset 0 0 30px rgba(0, 217, 255, 0.05);
+}
+
+/* ─── Scanline Overlay ───────────────────────────────────── */
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px);
+}
+
+/* ─── Section Utilities ──────────────────────────────────── */
+.section-padding {
+  padding: 5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 7rem 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-padding {
+    padding: 8rem 6rem;
+  }
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* ─── Button Styles ──────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #00D9FF, #7B61FF);
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #5EE6FF, #9B81FF);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 217, 255, 0.4);
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 217, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Card Tilt (JS-driven via inline style) ─────────────── */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease;
+}
+
+/* ─── Noise Texture Overlay ─────────────────────────────── */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* ─── Cursor Glow ────────────────────────────────────────── */
+.cursor-glow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+
+/* ─── Grid background ────────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 217, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 217, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ─── Timeline ───────────────────────────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 1.25rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, #00D9FF, #7B61FF, transparent);
+}
+
+/* ─── Progress Bar ───────────────────────────────────────── */
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #00D9FF, #7B61FF);
+  transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── Loading Screen ─────────────────────────────────────── */
+.loader-ring {
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(0, 217, 255, 0.1);
+  border-top-color: #00D9FF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─── Misc ───────────────────────────────────────────────── */
+.no-select {
+  user-select: none;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #111111 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* ══════════════════════════════════════════════════
+   LIGHT MODE — toggled via html.light-mode class
+   ══════════════════════════════════════════════════ */
+html.light-mode {
+  scrollbar-color: #7B61FF #E8EFFE;
+}
+
+html.light-mode ::-webkit-scrollbar-track {
+  background: #E8EFFE;
+}
+
+html.light-mode ::-webkit-scrollbar-thumb {
+  background: #7B61FF;
+}
+
+html.light-mode body {
+  background-color: #F0F4FF !important;
+  color: #0A0A0A !important;
+}
+
+html.light-mode section {
+  background-color: #F0F4FF !important;
+}
+
+html.light-mode footer {
+  background-color: #E4EAFF !important;
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light-mode .glass {
+  background: rgba(255, 255, 255, 0.65) !important;
+  border-color: rgba(0, 0, 0, 0.09) !important;
+}
+
+html.light-mode .glass-strong {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light-mode .gradient-text-subtle {
+  background: linear-gradient(135deg, #111111 0%, #444444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html.light-mode .text-white {
+  color: #0A0A0A !important;
+}
+
+html.light-mode h1,
+html.light-mode h2,
+html.light-mode h3,
+html.light-mode h4 {
+  color: #0A0A0A;
+}
+
+html.light-mode .btn-ghost {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #0A0A0A !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light-mode .btn-ghost:hover {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Hide dark-only decorations */
+html.light-mode .scanline-overlay,
+html.light-mode .noise-overlay,
+html.light-mode .cursor-glow {
+  display: none !important;
+}
+
+html.light-mode .timeline-line {
+  background: linear-gradient(to bottom, #7B61FF, #00D9FF, transparent);
+}
+
+html.light-mode input:-webkit-autofill,
+html.light-mode input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0A0A0A !important;
+}
+
+html.light-mode input,
+html.light-mode textarea {
+  color: #0A0A0A !important;
+}
