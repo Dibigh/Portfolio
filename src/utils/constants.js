@@ -9,7 +9,7 @@ export const PERSONAL = {
   email: 'dibighrai2017@gmail.com',
   phone: '+977-9863322266',
   github: 'https://github.com/Dibigh',
-  linkedin: 'https://www.linkedin.com/in/dibigh-rai-870203263/',
+  linkedin: 'https://www.linkedin.com/in/dibigh-rai-870203263'
 };
 
 // ─── Skills ───────────────────────────────────────────────
