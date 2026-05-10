@@ -170,22 +170,26 @@ export default function AboutSection() {
                             ))}
                         </motion.div>
 
-                        {/* Floating info chips */}
-                        <motion.div variants={fadeUp} className="flex flex-wrap gap-2">
-                            {[
-                                'React Ecosystem',
-                                'Deep Learning',
-                                'CNN / ResNet',
-                                'Computer Vision',
-                                'Full Stack',
-                            ].map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="px-3 py-1 rounded-full text-xs font-medium glass border border-white/8 text-[#B5B5B5] hover:text-[#00D9FF] hover:border-[#00D9FF]/30 transition-all duration-200 cursor-default"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
+                        <motion.div
+                            variants={fadeUp}
+                            className="glass rounded-2xl p-6 border border-white/8 neon-border-hover"
+                        >
+                            <div className="flex flex-wrap gap-2">
+                                {[
+                                    'React Ecosystem',
+                                    'Deep Learning',
+                                    'CNN / ResNet',
+                                    'Computer Vision',
+                                    'Full Stack',
+                                ].map((tag) => (
+                                    <span
+                                        key={tag}
+                                        className="px-3 py-1 rounded-full text-xs font-medium glass border border-white/8 text-[#B5B5B5] hover:text-[#00D9FF] hover:border-[#00D9FF]/30 transition-all duration-200 cursor-default"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
                         </motion.div>
                     </motion.div>
 
