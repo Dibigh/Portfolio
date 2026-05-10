@@ -98,7 +98,7 @@ export default function AboutSection() {
                 </motion.div>
 
                 {/* Content grid */}
-                <div className="grid lg:grid-cols-2 gap-12 items-center relative">
+                <div className="grid lg:grid-cols-2 gap-12 items-stretch relative">
 
                     {/* Vertical center line */}
                     <div className="hidden lg:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-gradient-to-b from-transparent via-[#00D9FF]/40 to-transparent" />
@@ -112,7 +112,7 @@ export default function AboutSection() {
                             hidden: {},
                             show: { transition: { staggerChildren: 0.12 } },
                         }}
-                        className="flex flex-col gap-6"
+                        className="flex flex-col gap-6 h-full justify-center"
                     >
                         {/* Bio card */}
                         <motion.div
@@ -195,9 +195,9 @@ export default function AboutSection() {
                         whileInView="show"
                         viewport={{ once: true }}
                         variants={fadeUp}
-                        className="flex justify-center"
+                        className="flex justify-center h-full"
                     >
-                        <div className="relative">
+                        <div className="relative w-full h-full max-w-[320px] md:max-w-[420px] lg:max-w-none">
 
                             {/* Glow effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-[#00D9FF]/20 to-[#7B61FF]/20 blur-3xl rounded-full" />
@@ -206,7 +206,7 @@ export default function AboutSection() {
                             <img
                                 src={photo}
                                 alt="Profile"
-                                className="relative z-10 w-[320px] md:w-[420px] rounded-3xl border border-white/10 shadow-2xl object-cover"
+                                className="relative z-10 w-full h-full rounded-3xl border border-white/10 shadow-2xl object-cover"
                             />
                         </div>
                     </motion.div>
