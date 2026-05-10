@@ -23,11 +23,10 @@ export default function Navbar({ darkMode, setDarkMode, sound, setSound, activeS
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 px-4 py-2 rounded-2xl transition-all duration-500 ${
-          scrolled
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 px-4 py-2 rounded-2xl transition-all duration-500 ${scrolled
             ? 'glass-strong shadow-lg shadow-black/40'
             : 'glass'
-        }`}
+          }`}
         style={{ width: 'min(90vw, 860px)' }}
       >
         {/* Logo */}
@@ -48,11 +47,10 @@ export default function Navbar({ darkMode, setDarkMode, sound, setSound, activeS
               <a
                 key={link.href}
                 href={link.href}
-                className={`relative px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 ${
-                  isActive
+                className={`relative px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 ${isActive
                     ? 'text-[#00D9FF]'
                     : 'text-[#B5B5B5] hover:text-white'
-                }`}
+                  }`}
               >
                 {isActive && (
                   <motion.span
@@ -124,11 +122,10 @@ export default function Navbar({ darkMode, setDarkMode, sound, setSound, activeS
                   initial={{ x: 40, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: i * 0.06 }}
-                  className={`text-sm font-medium py-2 px-3 rounded-lg transition-all ${
-                    activeSection === link.href.slice(1)
+                  className={`text-sm font-medium py-2 px-3 rounded-lg transition-all ${activeSection === link.href.slice(1)
                       ? 'text-[#00D9FF] bg-white/8'
                       : 'text-[#B5B5B5] hover:text-white hover:bg-white/5'
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </motion.a>

@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useAmbientMusic } from './hooks/useAmbientMusic';
-
 // ── Layout
 import Navbar from './components/layout/Navbar';
 import ScrollProgress from './components/layout/ScrollProgress';
@@ -77,7 +75,6 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [sound, setSound] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const { play, stop } = useAmbientMusic();
 
   // ── Apply dark / light mode to <html> element
   useEffect(() => {
@@ -90,16 +87,6 @@ export default function App() {
       html.classList.add('light-mode');
     }
   }, [darkMode]);
-
-  // ── Play / stop ambient music when sound toggled
-  useEffect(() => {
-    if (sound) {
-      play();
-    } else {
-      stop();
-    }
-    return () => stop(); // cleanup on unmount
-  }, [sound, play, stop]);
 
   // ── Active section tracking
   useEffect(() => {
@@ -122,6 +109,16 @@ export default function App() {
       <div className="scanline-overlay" />
       <div className="noise-overlay" />
       {darkMode && <CursorGlow />}
+
+      {/* Hidden YouTube Audio Player */}
+      {sound && (
+        <iframe
+          src="https://www.youtube.com/embed/PpJQZH9B1Y4?autoplay=1&list=RDPpJQZH9B1Y4"
+          title="YouTube music player"
+          allow="autoplay"
+          className="absolute w-px h-px opacity-0 pointer-events-none"
+        />
+      )}
 
       <AnimatePresence>
         {loading && <LoadingScreen onDone={() => setLoading(false)} />}
