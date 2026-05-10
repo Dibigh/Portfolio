@@ -32,15 +32,15 @@ function OrbitRings() {
   return (
     <group ref={ref}>
       <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <torusGeometry args={[2.6, 0.015, 16, 100]} />
+        <torusGeometry args={[2.2, 0.015, 16, 100]} />
         <meshBasicMaterial color="#00D9FF" transparent opacity={0.4} />
       </mesh>
       <mesh rotation={[0, Math.PI / 3, 0]}>
-        <torusGeometry args={[2.9, 0.015, 16, 100]} />
+        <torusGeometry args={[2.5, 0.015, 16, 100]} />
         <meshBasicMaterial color="#7B61FF" transparent opacity={0.4} />
       </mesh>
       <mesh rotation={[Math.PI / 4, 0, Math.PI / 4]}>
-        <torusGeometry args={[3.2, 0.015, 16, 100]} />
+        <torusGeometry args={[2.8, 0.015, 16, 100]} />
         <meshBasicMaterial color="#ffffff" transparent opacity={0.2} />
       </mesh>
     </group>
