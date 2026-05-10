@@ -19,7 +19,7 @@ export const SKILLS = {
     { name: 'JavaScript', level: 85, color: '#F7DF1E' },
     { name: 'TypeScript', level: 70, color: '#3178C6' },
     { name: 'Tailwind CSS', level: 88, color: '#38BDF8' },
-    { name: 'Next.js', level: 65, color: '#FFFFFF' },
+    // { name: 'Next.js', level: 65, color: '#FFFFFF' },
   ],
   Backend: [
     { name: 'Node.js', level: 78, color: '#83CD29' },
