@@ -195,9 +195,9 @@ export default function AboutSection() {
                         whileInView="show"
                         viewport={{ once: true }}
                         variants={fadeUp}
-                        className="flex justify-center h-full"
+                        className="flex justify-center h-full w-full lg:max-w-[420px] mx-auto"
                     >
-                        <div className="relative w-full h-full max-w-[320px] md:max-w-[420px] lg:max-w-none">
+                        <div className="relative w-full h-full min-h-[320px] lg:min-h-[400px]">
 
                             {/* Glow effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-[#00D9FF]/20 to-[#7B61FF]/20 blur-3xl rounded-full" />
@@ -206,7 +206,7 @@ export default function AboutSection() {
                             <img
                                 src={photo}
                                 alt="Profile"
-                                className="relative z-10 w-full h-full rounded-3xl border border-white/10 shadow-2xl object-cover"
+                                className="absolute inset-0 z-10 w-full h-full rounded-3xl border border-white/10 shadow-2xl object-cover"
                             />
                         </div>
                     </motion.div>
