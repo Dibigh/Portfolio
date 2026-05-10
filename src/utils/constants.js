@@ -9,7 +9,7 @@ export const PERSONAL = {
   email: 'dibighrai2017@gmail.com',
   phone: '+977-9863322266',
   github: 'https://github.com/Dibigh',
-  linkedin: 'https://linkedin.com/in/dibigh-rai',
+  linkedin: 'https://www.linkedin.com/in/dibigh-rai-870203263/',
 };
 
 // ─── Skills ───────────────────────────────────────────────
@@ -36,7 +36,7 @@ export const SKILLS = {
     { name: 'CNN', level: 70, color: '#7B61FF' },
   ],
   Other: [
-    { name: 'GitHub', level: 88, color: '#FFFFFF' },
+    { name: 'GitHub', level: 88, color: '#ffffff70' },
     { name: 'Flutter', level: 55, color: '#54C5F8' },
     { name: 'C#', level: 60, color: '#9B4F96' },
     { name: 'Unity', level: 55, color: '#FFFFFF' },
