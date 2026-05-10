@@ -341,6 +341,21 @@ html.light-mode .text-white {
   color: #0A0A0A !important;
 }
 
+html.light-mode .text-\[\#00D9FF\],
+html.light-mode .text-cyan-neon {
+  color: #007bb5 !important;
+}
+
+html.light-mode .text-\[\#7B61FF\],
+html.light-mode .text-purple-glow {
+  color: #5a40cc !important;
+}
+
+html.light-mode .text-\[\#B5B5B5\],
+html.light-mode .text-text-muted {
+  color: #4a4a4a !important;
+}
+
 html.light-mode h1,
 html.light-mode h2,
 html.light-mode h3,
